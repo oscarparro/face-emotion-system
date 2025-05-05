@@ -55,15 +55,18 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 
 ## 🐋 Desplegar el Backend con Docker
 
-**Construye la imagen**
-   ```bash
-   docker compose up -d --build
+  **Construye la imagen**
+  
+    ```bash
+    docker compose up -d --build
 
 ## 🚀 Arrancar la aplicación
    
   **Frontend**
+
    ```bash
    streamlit run app.py
+
 
 
 ## ⚠️ IMPORTANTE
