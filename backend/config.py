@@ -6,4 +6,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 2. Definición de valores por defecto
-EMOTION_MODEL_NAME = os.getenv("gsi-upm/emotion_detection_vit", "oscarparro/emotion_detection_vit")
+EMOTION_MODEL_NAME = os.getenv("gsi-upm/emotion_detection_vit", default="oscarparro/emotion_detection_vit")
+PROTOTXT_PATH = os.getenv("model/deploy.prototxt", default="model/deploy.prototxt")
+CAFFE_MODEL_PATH = os.getenv("model/res10_300x300_ssd_iter_140000.caffemodel", default="model/res10_300x300_ssd_iter_140000.caffemodel")
+
+REGISTERED_FACES_FILE = os.getenv("data/registered_faces.json", default="data/registered_faces.json")

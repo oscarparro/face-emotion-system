@@ -11,7 +11,7 @@ from io import BytesIO
 from PIL import Image
 import os
 
-from config import API_URL
+from config import API_URL, EMOTION_MODEL_NAME, PROTOTXT_PATH, CAFFE_MODEL_PATH, REGISTERED_FACES_FILE
 
 
 # Configuración de la página y estilos CSS (sin tocar)
@@ -34,11 +34,8 @@ st.markdown("""
 #######################################################
 # CONFIGURACIÓN GLOBAL Y VARIABLES
 #######################################################
-#API_URL = "http://127.0.0.1:8000"
 
-prototxt_path = "model/deploy.prototxt"
-caffe_model_path = "model/res10_300x300_ssd_iter_140000.caffemodel"
-net = cv2.dnn.readNetFromCaffe(prototxt_path, caffe_model_path)
+net = cv2.dnn.readNetFromCaffe(PROTOTXT_PATH, CAFFE_MODEL_PATH)
 
 MODE_INTERVALS = {
     "Deteccion completa": 10,
@@ -135,7 +132,7 @@ if "current_mode" not in st.session_state:
 #################
 # TÍTULO Y TABS
 #################
-st.markdown('<div class="big-center-title">Proyecto de Detección e Identificación de Rostros</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-center-title">Face and Emotion Recognition System</div>', unsafe_allow_html=True)
 st.markdown("""
     <style>
     [data-baseweb="tab-list"] button[data-baseweb="tab"] {
@@ -380,9 +377,9 @@ with tab3:
                 if st.button("Eliminar", key=reg["id"]):
                     d = requests.post(API_URL + "/delete_face", data={"id": reg["id"]})
                     if d.status_code == 200:
-                        st.success(f"Registro eliminado.")
+                        st.success(f"Success")
                     else:
-                        st.error("Error al eliminar el registro.")
+                        st.error("Error")
 
             # Línea separadora
             st.markdown("<hr>", unsafe_allow_html=True)

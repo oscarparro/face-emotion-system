@@ -16,7 +16,7 @@ import random
 import base64
 from datetime import datetime
 
-from config import EMOTION_MODEL_NAME
+from config import EMOTION_MODEL_NAME, PROTOTXT_PATH, CAFFE_MODEL_PATH, REGISTERED_FACES_FILE
 
 app = FastAPI()
 
@@ -31,9 +31,7 @@ app.add_middleware(
 # DNN y Modelo de emociones
 #############################
 
-prototxt_path = "model/deploy.prototxt"
-caffe_model_path = "model/res10_300x300_ssd_iter_140000.caffemodel"
-net = cv2.dnn.readNetFromCaffe(prototxt_path, caffe_model_path)
+net = cv2.dnn.readNetFromCaffe(PROTOTXT_PATH, CAFFE_MODEL_PATH)
 
 #emotion_model_name = "oscarparro/emotion_detection_vit"
 emotion_model = AutoModelForImageClassification.from_pretrained(EMOTION_MODEL_NAME)
@@ -74,7 +72,7 @@ def predict_emotion(face_img):
 #############################
 # Persistencia en JSON
 #############################
-REGISTERED_FACES_FILE = "data/registered_faces.json"
+
 
 def load_registered_faces():
     if not os.path.exists(REGISTERED_FACES_FILE):
