@@ -51,7 +51,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
    ```bash
    cd ..
    mkdir -p data
-
+   
 
 ## 🐋 Desplegar el Backend con Docker
 
@@ -59,15 +59,15 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
   
     ```bash
     docker compose up -d --build
+    ```
 
 ## 🚀 Arrancar la aplicación
    
   **Frontend**
-
-   ```bash
-   streamlit run app.py
-
-
+  
+  ```bash
+   streamlit run streamlit-app.py
+  ```
 
 ## ⚠️ IMPORTANTE
 
