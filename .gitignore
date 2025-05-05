@@ -3,3 +3,5 @@ data/
 
 # Ignore the .app folder
 .app/
+
+frontend/__pycache__/
