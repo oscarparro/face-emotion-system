@@ -74,3 +74,13 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 - Puedes usar la pestaña de Identificación en Tiempo Real sin necesidad de registro previo, pero recuerda pulsar siempre “Detener Cámara” antes de cambiar de pestaña o cerrar la aplicación, para liberar el dispositivo de captura.
 
 - Los registros se guardan en un archivo JSON y sobreviven al cierre de la app. Sin embargo, después de reiniciar Streamlit debes navegar a la pestaña Historial de Registros y recargar (refrescar) dicha pestaña para que se muestren los rostros guardados de sesiones anteriores.
+
+- Si al instalar face_recognition, dlib u OpenCV obtienes errores de CMake o librerías gráficas faltantes, asegúrate de tener:
+```bash
+sudo apt-get update
+sudo apt-get install -y \
+    build-essential \
+    cmake \
+    libgl1-mesa-glx \
+    libglib2.0-0
+```
