@@ -27,22 +27,22 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 ## 🔧 Instalación
 
 1. Clona este repositorio y sitúate en la carpeta:
-   
+
    ```bash
    git clone https://github.com/oscarparro/streamlit-app.git
    cd streamlit-app-docker
    ```
 
 2. Crea un entorno virtual
-   
+
    ```bash
    python3 -m venv .venv
    source .venv/bin/activate     # Linux / macOS
    .venv\Scripts\activate        # Windows
    ```
-   
+
 3. Instala las dependencias correspondientes
-   
+
    ```bash
    pip install --upgrade pip
    cd frontend
@@ -50,7 +50,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
    ```
 
 4. Directorio para el almacenamiento de rostros
-   
+
    ```bash
    cd ..
    mkdir -p data
@@ -60,20 +60,20 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 ## 🐋 Desplegar el Backend con Docker
 
 **Construye la imagen**
-  
+
     ```bash
     docker compose up -d --build
     ```
-  
+
 
 ## 🚀 Arrancar la aplicación
-   
+
 **Frontend**
-  
+
   ```bash
    streamlit run streamlit-app.py
   ```
-  
+
 
 ## ⚠️ IMPORTANTE
 
