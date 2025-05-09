@@ -60,9 +60,9 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 
 **Construye la imagen**
 
-    ```bash
-    docker compose up -d --build
-    ```
+   ```bash
+   docker compose up -d --build
+   ```
 
 
 ## 🚀 Arrancar la aplicación
@@ -70,7 +70,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 **Frontend**
   
    ```bash
-   streamlit run streamlit-app.py
+    streamlit run streamlit-app.py
    ```
 
 
