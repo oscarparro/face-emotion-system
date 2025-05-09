@@ -67,7 +67,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
   
   ```bash
    streamlit run streamlit-app.py
-  ```
+  
 
 ## ⚠️ IMPORTANTE
 
@@ -76,6 +76,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 - Los registros se guardan en un archivo JSON y sobreviven al cierre de la app. Sin embargo, después de reiniciar Streamlit debes navegar a la pestaña Historial de Registros y recargar (refrescar) dicha pestaña para que se muestren los rostros guardados de sesiones anteriores.
 
 - Si al instalar face_recognition, dlib u OpenCV obtienes errores de CMake o librerías gráficas faltantes, asegúrate de tener:
+
 ```bash
 sudo apt-get update
 sudo apt-get install -y \
