@@ -59,7 +59,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
   
     ```bash
     docker compose up -d --build
-    ```
+  
 
 ## 🚀 Arrancar la aplicación
    
