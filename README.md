@@ -80,6 +80,8 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 
 - Los registros se guardan en un archivo JSON y sobreviven al cierre de la app. Sin embargo, después de reiniciar Streamlit debes navegar a la pestaña Historial de Registros y recargar (refrescar) dicha pestaña para que se muestren los rostros guardados de sesiones anteriores.
 
+- Dentro del archivo /frontend/.env se encuentran las variables de entorno. En caso de utilizar un SO de Linux se debe cambiar el valor de `CAMERA_BACKEND=CAP_DSHOW` por `CAMERA_BACKEND=CAP_V4L2`.
+
 - Si al instalar face_recognition, dlib u OpenCV obtienes errores de CMake o librerías gráficas faltantes, asegúrate de tener:
 
 ```bash
