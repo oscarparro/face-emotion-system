@@ -55,7 +55,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
    cd ..
    mkdir -p data
    ```
-   
+
 
 ## 🐋 Desplegar el Backend con Docker
 
