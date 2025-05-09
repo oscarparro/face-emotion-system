@@ -31,6 +31,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
    ```bash
    git clone https://github.com/oscarparro/streamlit-app.git
    cd streamlit-app
+   
 
 2. Crea un entorno virtual
    
@@ -63,11 +64,11 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 
 ## 🚀 Arrancar la aplicación
    
-  **Frontend**
+   **Frontend**
   
-  ```bash
+   ```bash
    streamlit run streamlit-app.py
-  ```
+   ```
 
 ## ⚠️ IMPORTANTE
 

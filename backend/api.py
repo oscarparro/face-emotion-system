@@ -33,7 +33,6 @@ app.add_middleware(
 
 net = cv2.dnn.readNetFromCaffe(PROTOTXT_PATH, CAFFE_MODEL_PATH)
 
-#emotion_model_name = "oscarparro/emotion_detection_vit"
 emotion_model = AutoModelForImageClassification.from_pretrained(EMOTION_MODEL_NAME)
 transform = transforms.Compose([
     transforms.Resize((224, 224)),

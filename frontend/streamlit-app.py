@@ -11,7 +11,7 @@ from io import BytesIO
 from PIL import Image
 import os
 
-from config import API_URL, EMOTION_MODEL_NAME, PROTOTXT_PATH, CAFFE_MODEL_PATH, REGISTERED_FACES_FILE
+from config import API_URL, EMOTION_MODEL_NAME, PROTOTXT_PATH, CAFFE_MODEL_PATH, REGISTERED_FACES_FILE, CAMERA_INDEX, CAMERA_BACKEND_NAME, SEG_COMPLETA, SEG_EMOCIONES, SEG_RECONOCIMIENTO, R, G, B, B2, G2, R2
 
 
 # Configuración de la página y estilos CSS (sin tocar)
@@ -38,13 +38,13 @@ st.markdown("""
 net = cv2.dnn.readNetFromCaffe(PROTOTXT_PATH, CAFFE_MODEL_PATH)
 
 MODE_INTERVALS = {
-    "Deteccion completa": 10,
-    "Deteccion emociones": 2,
-    "Deteccion rostros": 5,
+    "Deteccion completa": SEG_COMPLETA,
+    "Deteccion emociones": SEG_EMOCIONES,
+    "Deteccion rostros": SEG_RECONOCIMIENTO,
     "No hacer nada": 0
 }
 
-UNKNOWN_COLOR = (0, 255, 0)
+UNKNOWN_COLOR = (B, G, R)
 
 
 def detect_faces_dnn(frame, net, conf_threshold=0.7):
@@ -97,9 +97,10 @@ def format_detected_labels(labels, mode):
                 html += f"- {name}<br>"
 
     elif mode_lower == "deteccion emociones":
-        fixed_color_str = "rgb(255, 0, 0)"
+        b, g, r = B2, G2, R2
+        color_str = f"rgb({r}, {g}, {b})"
         for idx, (_, emotion) in enumerate(labels):
-            html += f"- Emoción: {emotion} <span style='display:inline-block;width:12px;height:12px;background-color:{fixed_color_str};border:1px solid #000;margin-left:4px;vertical-align:middle;'></span><br>"
+            html += f"- Emoción: {emotion} <span style='display:inline-block;width:12px;height:12px;background-color:{color_str};border:1px solid #000;margin-left:4px;vertical-align:middle;'></span><br>"
     else:
         html += "Modo no reconocido."
         
@@ -180,7 +181,7 @@ with tab1:
             apply = st.form_submit_button("Aplicar Modo")
 
     if apply:
-        # solo al hacer click lo actualizamos
+        # Solo al hacer click lo actualizamos
         if selected_mode != st.session_state.current_mode:
             st.session_state.current_mode = selected_mode
             st.session_state.identification_active = False
@@ -204,7 +205,8 @@ with tab1:
 
     # Lógica de captura y dibujado unificado
     if st.session_state.identification_active:
-        cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+        camera_backend= getattr(cv2, CAMERA_BACKEND_NAME)
+        cap = cv2.VideoCapture(CAMERA_INDEX, camera_backend)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
         if not cap.isOpened():
@@ -249,7 +251,7 @@ with tab1:
                     name, emo = labels[i]
                     ml = st.session_state.current_mode.lower().strip()
                     if "emociones" in ml:
-                        color = (0,0,255); text=f"Emocion: {emo}"
+                        color = (B2,G2,R2); text=f"Emocion: {emo}"
                     else:
                         color = st.session_state.registered_colors.get(name, UNKNOWN_COLOR)
                         text = f"{name} ({emo})" if "completa" in ml else name
