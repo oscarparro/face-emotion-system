@@ -30,7 +30,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
    
    ```bash
    git clone https://github.com/oscarparro/streamlit-app.git
-   cd streamlit-app
+   cd streamlit-app-docker
 
 2. Crea un entorno virtual
    
