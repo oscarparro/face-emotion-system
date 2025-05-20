@@ -133,7 +133,7 @@ if "current_mode" not in st.session_state:
 #################
 # TÍTULO Y TABS
 #################
-st.markdown('<div class="big-center-title">Face and Emotion Recognition System</div>', unsafe_allow_html=True)
+st.markdown('<div class="big-center-title">Sistema de reconocimiento facial y de emociones</div>', unsafe_allow_html=True)
 st.markdown("""
     <style>
     [data-baseweb="tab-list"] button[data-baseweb="tab"] {
