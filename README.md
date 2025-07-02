@@ -1,4 +1,4 @@
-# Face and Emotion Recognition System
+# Face Recognition and Emotion Detection System
 
 Proyecto completo de reconocimiento facial y detección de emociones, compuesto por:
 
