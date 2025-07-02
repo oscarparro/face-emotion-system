@@ -205,7 +205,7 @@ with tab1:
 
     # Lógica de captura y dibujado unificado
     if st.session_state.identification_active:
-        camera_backend= getattr(cv2, CAMERA_BACKEND_NAME)
+        camera_backend = getattr(cv2, CAMERA_BACKEND_NAME)
         cap = cv2.VideoCapture(CAMERA_INDEX, camera_backend)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
