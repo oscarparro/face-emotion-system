@@ -29,8 +29,8 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 1. Clona este repositorio y sitúate en la carpeta:
 
    ```bash
-   git clone https://github.com/oscarparro/streamlit-app.git
-   cd streamlit-app-docker
+   git clone https://github.com/oscarparro/face-emotion-system.git
+   cd face-emotion-system
 
 2. Crea un entorno virtual
 
