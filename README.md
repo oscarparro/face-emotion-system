@@ -35,7 +35,7 @@ Proyecto completo de reconocimiento facial y detección de emociones, compuesto 
 2. Crea un entorno virtual
 
    ```bash
-   python3 -m venv .venv
+   python -m venv .venv
    source .venv/bin/activate     # Linux / macOS
    .venv\Scripts\activate        # Windows
    ```
